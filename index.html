@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Memory Match</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Memory Match</h1>
+            <p class="subtitle">Match pairs to progress through levels!</p>
+        </header>
+        
+        <div class="game-info">
+            <div class="info-box">
+                <div class="info-label">Level</div>
+                <div class="info-value" id="level">1</div>
+            </div>
+            <div class="info-box">
+                <div class="info-label">Moves</div>
+                <div class="info-value" id="moves">0</div>
+            </div>
+            <div class="info-box">
+                <div class="info-label">Time</div>
+                <div class="info-value" id="timer">0s</div>
+            </div>
+            <div class="info-box">
+                <div class="info-label">Matches</div>
+                <div class="info-value" id="matches">0/8</div>
+            </div>
+            <div class="info-box">
+                <div class="info-label">Stars</div>
+                <div class="info-value" id="stars">★★★</div>
+            </div>
+        </div>
+        
+        <div class="game-board" id="gameBoard">
+            <!-- Cards will be generated here -->
+        </div>
+        
+        <div class="controls">
+            <button class="btn btn-primary" id="restartBtn">
+                <i class="fas fa-redo"></i> Restart Level
+            </button>
+            <button class="btn btn-secondary" id="hintBtn">
+                <i class="fas fa-lightbulb"></i> Hint (3)
+            </button>
+        </div>
+        
+        <div class="settings-btn" id="settingsBtn">
+            <i class="fas fa-cog"></i>
+        </div>
+        
+        <div class="settings-panel" id="settingsPanel">
+            <h3>Game Settings</h3>
+            <div class="setting-option">
+                <span>Sound Effects</span>
+                <label class="switch">
+                    <input type="checkbox" id="soundToggle" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="setting-option">
+                <span>Animations</span>
+                <label class="switch">
+                    <input type="checkbox" id="animationToggle" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="setting-option">
+                <span>Card Themes</span>
+                <select id="themeSelect">
+                    <option value="default">Default</option>
+                    <option value="animals">Animals</option>
+                    <option value="food">Food</option>
+                    <option value="travel">Travel</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="level-complete" id="levelComplete">
+            <div class="complete-content">
+                <h2>Level Complete!</h2>
+                <div class="star-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>Moves: <span id="completeMoves">0</span> | Time: <span id="completeTime">0s</span></p>
+                <p>Next Level: <span id="nextLevel">2</span></p>
+                <button class="btn btn-primary" id="nextLevelBtn">
+                    <i class="fas fa-arrow-right"></i> Continue to Next Level
+                </button>
+            </div>
+        </div>
+        
+        <div class="win-message" id="winMessage">
+            <div class="win-content">
+                <h2>Congratulations!</h2>
+                <p>You've completed all levels!</p>
+                <div class="final-stats">
+                    <p>Total Moves: <span id="totalMoves">0</span></p>
+                    <p>Total Time: <span id="totalTime">0s</span></p>
+                    <p>Average Stars: <span id="averageStars">0</span></p>
+                </div>
+                <button class="btn btn-primary" id="playAgainBtn">
+                    <i class="fas fa-play"></i> Play Again
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
